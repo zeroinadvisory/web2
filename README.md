@@ -1,0 +1,1 @@
+Upload all files to the GitHub repository root. Then use Settings > Pages > Deploy from a branch > main > / (root).

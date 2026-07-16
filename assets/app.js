@@ -1,0 +1,1 @@
+document.querySelector('form')?.addEventListener('submit',e=>{e.preventDefault();alert('Preview form works. Connect to your CRM before launch.')});
