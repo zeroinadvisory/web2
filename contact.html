@@ -1,4 +1,76 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Contact | ZeroIn Advisory</title><meta name="description" content="Request an executive briefing with ZeroIn Advisory."><link rel="stylesheet" href="assets/styles.css"></head><body><header><div class="wrap nav"><a class="logo" href="index.html">O/IN ADVISORY</a><nav class="links"><a href="index.html">Home</a><a href="ai-engineering.html">AI Engineering</a><a href="advisory.html">Executive Advisory</a><a href="insights.html">Insights</a><a href="contact.html">Contact</a></nav></div></header><main>
 <section class="hero"><div class="wrap"><p class="eyebrow">Executive briefing</p><h1>Start with the decision.</h1><p class="lead">Tell us what your board, investment committee, or technology leadership team is trying to decide.</p></div></section>
-<section class="section"><div class="wrap contact"><div><h2>What to expect</h2><p class="lead">A focused conversation, not a sales presentation. Clear options for advisory, operating model design, enablement, or selective build.</p></div><form class="form"><input required placeholder="Name"><input type="email" required placeholder="Work email"><select><option>AI Engineering</option><option>AI Governance</option><option>Executive Advisory</option></select><textarea placeholder="What decision are you working through?"></textarea><button class="btn" type="submit">Request briefing</button></form></div></section>
+<section class="section"><div class="wrap contact"><div><h2>What to expect</h2><p class="lead">A focused conversation, not a sales presentation. Clear options for advisory, operating model design, enablement, or selective build.</p></div>
+<iframe
+  name="submission-target"
+  id="submission-target"
+  hidden>
+</iframe>
+
+<form
+  class="form"
+  id="briefing-form"
+  action="YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL"
+  method="POST"
+  target="submission-target">
+
+  <label>
+    Name
+    <input
+      type="text"
+      name="name"
+      autocomplete="name"
+      required
+      placeholder="Name">
+  </label>
+
+  <label>
+    Work email
+    <input
+      type="email"
+      name="email"
+      autocomplete="email"
+      required
+      placeholder="Work email">
+  </label>
+
+  <label>
+    Area of interest
+    <select name="service" required>
+      <option value="" selected disabled>Select an area</option>
+      <option value="AI Engineering">AI Engineering</option>
+      <option value="AI Governance">AI Governance</option>
+      <option value="Executive Advisory">Executive Advisory</option>
+    </select>
+  </label>
+
+  <label>
+    Decision or request
+    <textarea
+      name="request"
+      required
+      minlength="20"
+      maxlength="3000"
+      placeholder="What decision are you working through?"></textarea>
+  </label>
+
+  <!-- Honeypot: legitimate users should leave this empty -->
+  <div class="form-trap" aria-hidden="true">
+    <label>
+      Company website
+      <input
+        type="text"
+        name="website"
+        tabindex="-1"
+        autocomplete="off">
+    </label>
+  </div>
+
+  <input type="hidden" name="source" value="ZeroIn Advisory website">
+
+  <button class="btn" type="submit">Request briefing</button>
+
+  <p id="form-status" role="status" aria-live="polite"></p>
+</form>
+</div></section>
 </main><footer><div class="wrap foot"><div>O/IN ADVISORY</div><div>AI Engineering · Executive Advisory · Insights</div><small>© 2026 ZeroIn Advisory</small></div></footer><script src="assets/app.js"></script></body></html>
