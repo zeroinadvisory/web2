@@ -1,11 +1,312 @@
-body{margin:0;font-family:Arial,sans-serif;background:#07101a;color:#f5f7fa;line-height:1.6}a{color:inherit;text-decoration:none}.wrap{width:min(calc(100% - 32px),1180px);margin:auto}header{position:sticky;top:0;background:#07101af2;border-bottom:1px solid #23384b;z-index:20}.nav{min-height:72px;display:flex;justify-content:space-between;align-items:center}.logo{color:#e8c89a;font-weight:800}.links{display:flex;gap:20px;font-size:13px;text-transform:uppercase}.hero{padding:110px 0 90px;background:radial-gradient(circle at 80% 20%,#16345188,transparent 30%),linear-gradient(180deg,#07101a,#0d1824)}h1{font-size:clamp(48px,8vw,86px);line-height:1;letter-spacing:-.05em;margin:0 0 24px}h1 span{color:#d66f3a}.lead{font-size:20px;color:#cbd5df;max-width:720px}.btn{display:inline-block;margin-top:24px;padding:14px 20px;border:1px solid #d66f3a;color:#d66f3a;border-radius:8px}.section{padding:80px 0}.alt{background:#0d1824}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:#101d2a;border:1px solid #23384b;border-radius:16px;padding:26px}.card p{color:#a7b3c0}.eyebrow{color:#f39a63;text-transform:uppercase;letter-spacing:.14em;font-size:12px;font-weight:800}.insight{padding:22px 0;border-top:1px solid #23384b}.contact{display:grid;grid-template-columns:1fr 1fr;gap:30px}.form{display:grid;gap:12px}
+/* ==========================================================
+   ZeroIn Advisory
+   ========================================================== */
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #07101a;
+    color: #f5f7fa;
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.wrap {
+    width: min(calc(100% - 32px), 1180px);
+    margin: auto;
+}
+
+/* ==========================================================
+   Header
+   ========================================================== */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+
+    background: rgba(7,16,26,.95);
+    border-bottom: 1px solid #23384b;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 72px;
+}
+
+.logo {
+    font-weight: 800;
+    color: #e8c89a;
+}
+
+.links {
+    display: flex;
+    gap: 20px;
+
+    font-size: 13px;
+    text-transform: uppercase;
+}
+
+/* ==========================================================
+   Hero
+   ========================================================== */
+
+.hero {
+    padding: 110px 0 90px;
+
+    background:
+        radial-gradient(circle at 80% 20%, #16345188, transparent 30%),
+        linear-gradient(180deg,#07101a,#0d1824);
+}
+
+h1 {
+    margin: 0 0 24px;
+
+    font-size: clamp(48px,8vw,86px);
+    line-height: 1;
+    letter-spacing: -.05em;
+}
+
+h1 span {
+    color: #d66f3a;
+}
+
+.eyebrow {
+    color: #f39a63;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    text-transform: uppercase;
+    letter-spacing: .14em;
+}
+
+.lead {
+    max-width: 720px;
+
+    font-size: 20px;
+    color: #cbd5df;
+}
+
+/* ==========================================================
+   Buttons
+   ========================================================== */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 12px 22px;
+
+    border: 1px solid #d66f3a;
+    border-radius: 8px;
+
+    background: transparent;
+    color: #d66f3a;
+
+    cursor: pointer;
+    transition: .2s ease;
+}
+
+.btn:hover {
+    background: #d66f3a;
+    color: #07101a;
+}
+
+/* ==========================================================
+   Sections
+   ========================================================== */
+
+.section {
+    padding: 80px 0;
+}
+
+.alt {
+    background: #0d1824;
+}
+
+/* ==========================================================
+   Cards
+   ========================================================== */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 18px;
+}
+
+.card {
+    padding: 26px;
+
+    border: 1px solid #23384b;
+    border-radius: 16px;
+
+    background: #101d2a;
+}
+
+.card p {
+    color: #a7b3c0;
+}
+
+.insight {
+    padding: 22px 0;
+
+    border-top: 1px solid #23384b;
+}
+
+/* ==========================================================
+   Contact Layout
+   ========================================================== */
+
+.contact {
+    display: grid;
+    grid-template-columns: minmax(0,1fr) 520px;
+    gap: 80px;
+    align-items: start;
+}
+
+/* ==========================================================
+   Form
+   ========================================================== */
+
+.form {
+    display: grid;
+    gap: 22px;
+}
+
+.form label {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.form input,
+.form select,
+.form textarea {
+
+    width: 100%;
+    box-sizing: border-box;
+
+    padding: 14px 16px;
+
+    border: 1px solid #23384b;
+    border-radius: 8px;
+
+    background: #07101a;
+    color: #ffffff;
+
+    font-size: 16px;
+    font-family: inherit;
+
+    transition: border-color .2s ease;
+}
+
+.form input,
+.form select {
+    height: 52px;
+}
+
+.form textarea {
+    min-height: 170px;
+    resize: vertical;
+}
+
+.form input:focus,
+.form select:focus,
+.form textarea:focus {
+
+    outline: none;
+    border-color: #d66f3a;
+}
+
+.form button {
+
+    width: fit-content;
+    min-width: 220px;
+
+    margin-top: 8px;
+}
+
+#form-status {
+
+    min-height: 24px;
+    margin: 0;
+
+    color: #cbd5df;
+    font-size: 14px;
+}
+
+/* ==========================================================
+   Honeypot
+   ========================================================== */
+
 .form-trap {
     position: absolute;
+
     left: -9999px;
+
     width: 1px;
     height: 1px;
+
     overflow: hidden;
 }
-.form input,.form select,.form textarea{padding:12px;background:#07101a;border:1px solid #23384b;color:#fff;border-radius:8px}.form textarea{min-height:120px}
-footer{padding:30px 0;border-top:1px solid #23384b}.foot{display:flex;justify-content:space-between;gap:20px}@media(max-width:760px){.links{display:none}.cards,.contact{grid-template-columns:1fr}.hero{padding-top:85px}.foot{flex-direction:column}}
-/* Hidden honeypot field */
+
+/* ==========================================================
+   Footer
+   ========================================================== */
+
+footer {
+
+    padding: 30px 0;
+
+    border-top: 1px solid #23384b;
+}
+
+.foot {
+
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+/* ==========================================================
+   Mobile
+   ========================================================== */
+
+@media (max-width: 760px) {
+
+    .links {
+        display: none;
+    }
+
+    .cards,
+    .contact {
+        grid-template-columns: 1fr;
+    }
+
+    .contact {
+        gap: 48px;
+    }
+
+    .hero {
+        padding-top: 85px;
+    }
+
+    .foot {
+        flex-direction: column;
+    }
+
+    .form button {
+        width: 100%;
+    }
+}
