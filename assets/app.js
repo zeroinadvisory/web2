@@ -1,41 +1,37 @@
 const briefingForm = document.querySelector("#briefing-form");
-const submissionTarget = document.querySelector("#submission-target");
 const formStatus = document.querySelector("#form-status");
 
-if (briefingForm && submissionTarget && formStatus) {
+if (briefingForm && formStatus) {
+  briefingForm.addEventListener("submit", async (event) => {
+    event.preventDefault();
 
-    let submissionInProgress = false;
+    const submitButton =
+      briefingForm.querySelector('button[type="submit"]');
 
-    briefingForm.addEventListener("submit", () => {
+    submitButton.disabled = true;
+    submitButton.textContent = "Submitting...";
+    formStatus.textContent = "Submitting your request...";
 
-        submissionInProgress = true;
+    try {
+      const formData = new FormData(briefingForm);
 
-        const submitButton =
-            briefingForm.querySelector('button[type="submit"]');
+      await fetch(briefingForm.action, {
+        method: "POST",
+        body: formData,
+        mode: "no-cors"
+      });
 
-        submitButton.disabled = true;
-        submitButton.textContent = "Submitting...";
+      briefingForm.reset();
+      formStatus.textContent =
+        "Thank you. Your request has been received.";
+    } catch (error) {
+      console.error("Submission error:", error);
 
-        formStatus.textContent =
-            "Submitting your request...";
-    });
-
-    submissionTarget.addEventListener("load", () => {
-
-        if (!submissionInProgress) return;
-
-        submissionInProgress = false;
-
-        briefingForm.reset();
-
-        const submitButton =
-            briefingForm.querySelector('button[type="submit"]');
-
-        submitButton.disabled = false;
-        submitButton.textContent = "Request briefing";
-
-        formStatus.textContent =
-            "Thank you. Your request has been received. We'll be in touch shortly.";
-    });
-
+      formStatus.textContent =
+        "Submission failed. Please try again.";
+    } finally {
+      submitButton.disabled = false;
+      submitButton.textContent = "Request briefing";
+    }
+  });
 }
